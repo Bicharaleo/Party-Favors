@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/e2a18827311d3c0569a32d3f3135043e"
+    tools:context=".LogIn">
+
+
+    <EditText
+
+        android:id="@+id/RegUsuario"
+        android:layout_width="371dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/edit_text_mod"
+        android:hint="Usuario"
+        android:textColorHint="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <EditText
+
+        android:id="@+id/RegNombre"
+        android:layout_width="371dp"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="44dp"
+        android:background="@drawable/edit_text_mod"
+        android:hint="Nombre"
+        android:textColorHint="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RegUsuario" />
+
+    <EditText
+
+        android:id="@+id/RegApellido"
+        android:layout_width="371dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/edit_text_mod"
+        android:hint="Apellido"
+        android:textColorHint="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RegNombre" />
+
+    <EditText
+
+        android:id="@+id/RegPass"
+        android:layout_width="371dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:background="@drawable/edit_text_mod"
+        android:hint="Contraseña"
+        android:textColorHint="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RegApellido" />
+
+    <Button
+        android:id="@+id/btnRegRegistrar"
+        android:layout_width="371dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/boton_mod"
+        android:text="REGISTRAR"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RegPass" />
+
+    <Button
+        android:id="@+id/btnCancelar"
+        android:layout_width="371dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/boton_mod"
+        android:text="CANCELAR"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnRegRegistrar"
+        app:layout_constraintVertical_bias="0.474" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:text="Registrarse"
+        android:textColor="@color/purple_200"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
