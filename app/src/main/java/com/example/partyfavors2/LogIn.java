@@ -16,7 +16,7 @@ public class LogIn extends AppCompatActivity {
     EditText editUsuario, editPassword;
     Button btnRegistrar,btnIngresar;
     String dbUsuario, dbContraseña, dbNombre, usuario, contraseña;
-    int dbId;
+    int dbId, leogato;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
