@@ -6,18 +6,19 @@
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/e2a18827311d3c0569a32d3f3135043e"
-    tools:context=".LogIn">
+    android:onClick="validarCampos"
+    tools:context=".activitys.SingIn">
 
 
     <EditText
 
         android:id="@+id/RegUsuario"
-        android:layout_width="371dp"
+        android:layout_width="305dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
         android:background="@drawable/edit_text_mod"
         android:hint="Usuario"
+        android:textColor="@color/black"
         android:textColorHint="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,12 +28,13 @@
     <EditText
 
         android:id="@+id/RegNombre"
-        android:layout_width="371dp"
+        android:layout_width="305dp"
         android:layout_height="wrap_content"
 
         android:layout_marginTop="44dp"
         android:background="@drawable/edit_text_mod"
         android:hint="Nombre"
+        android:textColor="@color/black"
         android:textColorHint="@color/black"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -42,11 +44,12 @@
     <EditText
 
         android:id="@+id/RegApellido"
-        android:layout_width="371dp"
+        android:layout_width="305dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
         android:background="@drawable/edit_text_mod"
         android:hint="Apellido"
+        android:textColor="@color/black"
         android:textColorHint="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -56,11 +59,13 @@
     <EditText
 
         android:id="@+id/RegPass"
-        android:layout_width="371dp"
+        android:layout_width="305dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
         android:background="@drawable/edit_text_mod"
         android:hint="Contraseña"
+        android:inputType="textPassword"
+        android:textColor="@color/black"
         android:textColorHint="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -69,10 +74,11 @@
 
     <Button
         android:id="@+id/btnRegRegistrar"
-        android:layout_width="371dp"
+        android:layout_width="305dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
         android:background="@drawable/boton_mod"
+        android:onClick="validarCampos"
         android:text="REGISTRAR"
         android:textColor="#ffffff"
         android:textSize="20sp"
@@ -83,9 +89,10 @@
 
     <Button
         android:id="@+id/btnCancelar"
-        android:layout_width="371dp"
+        android:layout_width="305dp"
         android:layout_height="wrap_content"
         android:background="@drawable/boton_mod"
+        android:onClick="salirSingIn"
         android:text="CANCELAR"
         android:textColor="#ffffff"
         android:textSize="20sp"
@@ -102,7 +109,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
         android:text="Registrarse"
-        android:textColor="@color/purple_200"
         android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
