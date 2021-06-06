@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,6 +19,7 @@ import com.example.partyfavors2.utilidades.Utilidades;
 public class LogIn extends AppCompatActivity {
 
     EditText editUsuario, editPassword;
+    boolean canExitApp = false;
     Button btnRegistrar, btnIngresar;
     String dbUsuario, dbContraseña, dbNombre, usuario, contraseña;
     int dbId, leogato;
@@ -72,9 +74,25 @@ public class LogIn extends AppCompatActivity {
                 intent.putExtras(bundle);
                 startActivity(intent);
                 finish();
-            } else {
-                Toast.makeText(this, "Usuario o contraseña incorrecto.", Toast.LENGTH_SHORT).show();
             }
+        }
+         if(cursor.getCount() == 0) {
+            Toast.makeText(this, "Usuario o contraseña incorrecto.", Toast.LENGTH_SHORT).show();
+        }
+    }
+    @Override
+    public void onBackPressed() {
+        if (!canExitApp) {
+            canExitApp = true;
+            Toast.makeText(this, getString(R.string.app_back_pressed_exit), Toast.LENGTH_SHORT).show();
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    canExitApp = false;
+                }
+            }, 2000);
+        } else {
+            finish();
         }
     }
 }

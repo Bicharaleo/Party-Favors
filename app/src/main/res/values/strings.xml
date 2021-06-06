@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">PartyFavors2</string>
+    <string name="app_back_pressed_log_in">Pulse de nuevo atras para cerrar sesion.</string>
+    <string name="app_back_pressed_exit">Pulse de nuevo atras para salir.</string>
 </resources>

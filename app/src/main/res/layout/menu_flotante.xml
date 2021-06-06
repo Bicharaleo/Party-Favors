@@ -14,54 +14,14 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="451dp"
-        android:layout_marginEnd="25dp"
+        android:layout_marginTop="413dp"
+        android:layout_marginEnd="29dp"
         android:clickable="true"
-        android:onClick="AbrirCamara"
+        android:onClick="abrirCamara"
         android:scaleX="0.8"
         android:scaleY="0.8"
         app:backgroundTint="@android:color/holo_red_light"
         app:srcCompat="@drawable/ic_baseline_camera_24" />
-
-    <TextView
-        android:id="@+id/textmenu1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="467dp"
-        android:layout_marginEnd="15dp"
-        android:layout_toStartOf="@+id/boton1"
-        android:backgroundTint="@color/white"
-        android:text="Camara"
-        android:textColor="@color/black"
-        android:textSize="24sp" />
-
-    <TextView
-        android:id="@+id/textmenu2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="533dp"
-        android:layout_marginEnd="14dp"
-        android:layout_toStartOf="@+id/boton1"
-        android:text="Sel. Foto"
-        android:textColor="@color/black"
-        android:textSize="24sp" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/boton2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/boton1"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="25dp"
-        android:clickable="true"
-        android:onClick="SeleccionarImagen"
-        android:scaleX="0.8"
-        android:scaleY="0.8"
-        app:backgroundTint="@android:color/holo_red_light"
-        app:srcCompat="@drawable/ic_baseline_image_search_24" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/boton3"
@@ -70,7 +30,7 @@
         android:layout_below="@+id/boton2"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="25dp"
+        android:layout_marginEnd="29dp"
         android:clickable="true"
         android:onClick="obtenerUbicacion"
         android:scaleX="0.8"
@@ -78,15 +38,55 @@
         app:backgroundTint="@android:color/holo_red_light"
         app:srcCompat="@drawable/ic_baseline_add_location_24" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/boton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/boton1"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="29dp"
+        android:clickable="true"
+        android:onClick="seleccionarImagen"
+        android:scaleX="0.8"
+        android:scaleY="0.8"
+        app:backgroundTint="@android:color/holo_red_light"
+        app:srcCompat="@drawable/ic_baseline_image_search_24" />
+
     <TextView
         android:id="@+id/textmenu3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="595dp"
-        android:layout_marginEnd="14dp"
+        android:layout_marginTop="557dp"
+        android:layout_marginEnd="13dp"
         android:layout_toStartOf="@+id/boton1"
         android:text="Ubicacion"
+        android:textColor="@color/black"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textmenu2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="495dp"
+        android:layout_marginEnd="14dp"
+        android:layout_toStartOf="@+id/boton1"
+        android:text="Sel. Foto"
+        android:textColor="@color/black"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textmenu1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="429dp"
+        android:layout_marginEnd="15dp"
+        android:layout_toStartOf="@+id/boton1"
+        android:backgroundTint="@color/white"
+        android:text="Camara"
         android:textColor="@color/black"
         android:textSize="24sp" />
 

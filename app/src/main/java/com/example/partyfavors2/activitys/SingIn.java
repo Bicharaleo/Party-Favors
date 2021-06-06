@@ -55,7 +55,7 @@ public class SingIn extends AppCompatActivity {
         SQLiteDatabase db = conexionSQLiteHelper.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM " + Utilidades.TABLA_USUARIOS + " WHERE " + Utilidades.CAMPO_USUARIO + " = '" + usuario + "'", null);
         if (cursor.getCount() <= 0) {
-            GuardarUsuario();
+            guardarUsuario();
         }
         else{
             Toast.makeText(SingIn.this, "El usuario ya esta en uso.", Toast.LENGTH_SHORT).show();
@@ -68,7 +68,7 @@ public class SingIn extends AppCompatActivity {
     }
 
 
-    public void GuardarUsuario() {
+    public void guardarUsuario() {
         SQLiteDatabase db = conexionSQLiteHelper.getWritableDatabase();
 
         ContentValues values = new ContentValues();

@@ -44,7 +44,7 @@
         android:layout_marginTop="24dp"
         android:background="@drawable/edit_text_mod"
         android:ems="10"
-        android:hint="Nota"
+        android:hint="Titulo"
         android:inputType="textPersonName"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
@@ -69,10 +69,10 @@
         android:id="@+id/previewImagenItem"
         android:layout_width="295dp"
         android:layout_height="144dp"
-        android:layout_marginTop="176dp"
+        android:layout_marginTop="128dp"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editNota"
         app:srcCompat="@drawable/ic_launcher_foreground" />
@@ -84,7 +84,7 @@
         android:layout_marginBottom="42dp"
         android:background="@drawable/edit_text_mod"
         android:backgroundTint="@color/design_default_color_error"
-        android:onClick="GuardarRecuerdo"
+        android:onClick="guardarRecuerdo"
         android:text="Guarda"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/botonadd"
@@ -106,9 +106,10 @@
 
     <TextView
         android:id="@+id/textView22"
-        android:layout_width="295dp"
-        android:layout_height="49dp"
+        android:layout_width="261dp"
+        android:layout_height="43dp"
         android:text="TextView"
+        android:textColor="@color/black"
         android:textSize="18sp"
         android:textStyle="bold"
         android:visibility="invisible"
@@ -121,10 +122,11 @@
 
     <TextView
         android:id="@+id/textView11"
-        android:layout_width="293dp"
-        android:layout_height="58dp"
+        android:layout_width="261dp"
+        android:layout_height="35dp"
         android:layout_marginTop="32dp"
         android:text="TextView"
+        android:textColor="@color/black"
         android:textSize="18sp"
         android:textStyle="bold"
         android:visibility="invisible"
@@ -144,6 +146,6 @@
         app:layout_constraintBottom_toTopOf="@+id/previewImagenItem"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editNota"
-        app:layout_constraintVertical_bias="0.605" />
+        app:layout_constraintVertical_bias="0.336" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

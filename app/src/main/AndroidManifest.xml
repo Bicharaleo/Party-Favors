@@ -18,7 +18,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.PartyFavors2">
+        android:theme="@style/Theme.PartyFavors2"
+        android:hardwareAccelerated="false"
+        android:largeHeap="true">
         <activity android:name=".activitys.Add"></activity>
         <activity android:name=".activitys.SingIn" />
         <activity android:name=".activitys.LogIn">

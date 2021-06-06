@@ -22,11 +22,11 @@ public class Camera extends AppCompatActivity {
         this.activity = activity;
     }
 
-    public void AbrirCamara() {
+    public void abrirCamara() {
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         File imagenArchivo = null;
         try {
-            imagenArchivo = CrearImagen();
+            imagenArchivo = crearImagen();
         } catch (IOException ex) {
             Log.e("Error", ex.toString());
         }
@@ -37,7 +37,7 @@ public class Camera extends AppCompatActivity {
         }
     }
 
-    private File CrearImagen() throws IOException {
+    private File crearImagen() throws IOException {
         String nombreImagen = "Foto_";
         File directorio = activity.getExternalFilesDir(Environment.DIRECTORY_PICTURES);
         File imagen = File.createTempFile(nombreImagen, ".jpg", directorio);

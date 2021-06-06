@@ -8,12 +8,12 @@ import android.media.ExifInterface;
 import java.io.IOException;
 
 public class OrientacionImagen {
-    public Bitmap bitmap;
-    public Bitmap orientarImagen(String image) {
-         bitmap = BitmapFactory.decodeFile(image);
+    Bitmap bitmap;
+    public Bitmap orientarImagen(String rutaImage) {
+        bitmap = BitmapFactory.decodeFile(rutaImage);
         ExifInterface ei = null;
         try {
-            ei = new ExifInterface(image);
+            ei = new ExifInterface(rutaImage);
         } catch (
                 IOException e) {
             e.printStackTrace();

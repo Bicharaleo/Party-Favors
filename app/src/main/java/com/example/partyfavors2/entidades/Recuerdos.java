@@ -12,7 +12,6 @@ public class Recuerdos implements Serializable {
     private String ubicacion;
 
     public Recuerdos(int id, int idUsuario, String titulo, String nota, String imagen, String ubicacion){
-
     this.id = id;
     this.idUsuario = idUsuario;
     this.titulo = titulo;

@@ -93,8 +93,7 @@ public class Add extends AppCompatActivity {
             ActivityCompat.requestPermissions(this,
                     new String[]{Manifest.permission.CAMERA,
                             Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                            Manifest.permission.READ_EXTERNAL_STORAGE,
-                            Manifest.permission.RECORD_AUDIO}, 0);
+                            Manifest.permission.READ_EXTERNAL_STORAGE}, 0);
         }
     }
     public void desplegarMenu(View view) {
@@ -195,7 +194,7 @@ public class Add extends AppCompatActivity {
         mlocManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, (LocationListener) Local);
         mlocManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, (LocationListener) Local);
         textView1.setText("Localización agregada");
-        textView2.setText("");
+        textView2.setText("Geolocalizando..");
     }
 
     @RequiresApi(api = Build.VERSION_CODES.M)
@@ -233,11 +232,11 @@ public class Add extends AppCompatActivity {
         desplegarMenuFlotante();
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION,}, 1000);
-        } else {
-            locationStart();
-            textView1.setVisibility(View.VISIBLE);
-            textView2.setVisibility(View.VISIBLE);
-            botonIr.setVisibility(View.VISIBLE);
+        } else{
+                locationStart();
+                textView1.setVisibility(View.VISIBLE);
+                textView2.setVisibility(View.VISIBLE);
+                botonIr.setVisibility(View.VISIBLE);
         }
     }
     public void abrirMaps(View view){
@@ -248,15 +247,15 @@ public class Add extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void AbrirCamara(View view) {
+    public void abrirCamara(View view) {
         desplegarMenuFlotante();
         camara.setActivity(this);
-        camara.AbrirCamara();
+        camara.abrirCamara();
     }
-    public void SeleccionarImagen(View vista) {
+    public void seleccionarImagen(View vista) {
         desplegarMenuFlotante();
         seleccionarImagen.setActivity(this);
-        seleccionarImagen.SeleccionarImagen();
+        seleccionarImagen.seleccionarImagen();
     }
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
@@ -269,34 +268,39 @@ public class Add extends AppCompatActivity {
             previewImagen.setImageBitmap(bitmap);
         }
         if (resultCode == RESULT_OK && requestCode == 200 && data != null) {
-            seleccionarImagen.SeleccionarImagenResult(data);
+            seleccionarImagen.seleccionarImagenResult(data);
             IMAGEN = seleccionarImagen.getRutaImagen();
             Bitmap bitmap = orientacionImagen.orientarImagen(IMAGEN);
             previewImagen.setImageBitmap(bitmap);
         }
     }
 
-    public void GuardarRecuerdo (View view) {
+    public void guardarRecuerdo(View view) {
         TITULO = editTitulo.getText().toString();
         NOTA = editNota.getText().toString();
         UBICACION = direccion;
-        DataBase conexionSQLiteHelper = new DataBase(this, "db_partyfavors", null, 1);
-        SQLiteDatabase db = conexionSQLiteHelper.getWritableDatabase();
+        if(!TITULO.equals("")) {
+            DataBase conexionSQLiteHelper = new DataBase(this, "db_partyfavors", null, 1);
+            SQLiteDatabase db = conexionSQLiteHelper.getWritableDatabase();
 
-        ContentValues values = new ContentValues();
-        values.put(Utilidades.ID_USUARIO_RECUERDO, IDUSUARIO);
-        values.put(Utilidades.CAMPO_TITULO, TITULO);
-        values.put(Utilidades.CAMPO_NOTA, NOTA);
-        values.put(Utilidades.CAMPO_IMAGEN, IMAGEN);
-        values.put(Utilidades.CAMPO_UBICACION, UBICACION);
-        Long idResultante = db.insert(Utilidades.TABLA_RECUERDOS, Utilidades.CAMPO_TITULO, values);
-        Toast.makeText(getApplicationContext(), "Recuerdo Nro° " + idResultante + " fue registrado exitosamente.", Toast.LENGTH_LONG).show();
-        Intent intent = new Intent(this, Feed.class);
-        Bundle bundle = new Bundle();
-        bundle.putInt("idUsuario", IDUSUARIO);
-        bundle.putString("nombreUsuario", NOMBREUSUARIO);
-        intent.putExtras(bundle);
-        startActivity(intent);
-        finish();
+            ContentValues values = new ContentValues();
+            values.put(Utilidades.ID_USUARIO_RECUERDO, IDUSUARIO);
+            values.put(Utilidades.CAMPO_TITULO, TITULO);
+            values.put(Utilidades.CAMPO_NOTA, NOTA);
+            values.put(Utilidades.CAMPO_IMAGEN, IMAGEN);
+            values.put(Utilidades.CAMPO_UBICACION, UBICACION);
+            db.insert(Utilidades.TABLA_RECUERDOS, Utilidades.CAMPO_TITULO, values);
+            Toast.makeText(getApplicationContext(), "El recuerdo fue guardado exitosamente.", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(this, Feed.class);
+            Bundle bundle = new Bundle();
+            bundle.putInt("idUsuario", IDUSUARIO);
+            bundle.putString("nombreUsuario", NOMBREUSUARIO);
+            intent.putExtras(bundle);
+            startActivity(intent);
+            finish();
+        }
+        else{
+            Toast.makeText(this, "El recuerdo debe tener titulo.", Toast.LENGTH_SHORT).show();
+        }
     }
 }
